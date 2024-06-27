@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRGP - Midpoint Circle Algorithm</title>
+</head>
+
+<body>
+    <h1>Midpoint Circle Algorithm</h1>
+    <h2>Usage</h2>
+    <ul>
+        <li>Move your mouse to change end point, left click to set start point of the line.</li>
+        <li>Select different algorithms and grid size to experiment.</li>
+    </ul>
+    <div style="display: flex;">
+        <canvas id="canvas" style="cursor: crosshair;"></canvas>
+        <fieldset>
+            <legend>Settings</legend>
+            <div style="padding-bottom: 1rem;">
+                <input type="checkbox" name="grids" id="grids">
+                <label for="grids">Show grids</label>
+            </div>
+            <div style="padding-bottom: 1rem;">
+                <label for="size">Size:</label>
+                <input type="number" name="size" id="size" min="5" max="1000">
+            </div>
+        </fieldset>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

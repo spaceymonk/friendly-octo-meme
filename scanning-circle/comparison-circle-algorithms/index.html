@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRGP - circle Algorithms Comparison</title>
+</head>
+
+<body>
+    <h1>circle Algorithms Comparison</h1>
+    <h2>Usage</h2>
+    <ul>
+        <li>Move your mouse to change end point, left click to set start point of the circle.</li>
+        <li>Select different algorithms and grid size to experiment.</li>
+        <li> Legend:
+            <div style="display: flex; align-items: center;">
+                <div style="width: 10px; height: 10px; background-color: rgba(0, 200, 0, 0.5);"></div>
+                <span style="margin-left: 10px;">Angle-Step Circle Algorithm</span>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <div style="width: 10px; height: 10px; background-color: rgba(0, 0, 200, 0.5);"></div>
+                <span style="margin-left: 10px;">Midpoint Cirlce Algorithm</span>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <div style="width: 10px; height: 10px; background-color: rgba(200, 0, 0, 0.5);"></div>
+                <span style="margin-left: 10px;">Unit-Step Cirlce Algorithm</span>
+            </div>
+        </li>
+    </ul>
+    <div style="display: flex;">
+        <canvas id="canvas" style="cursor: crosshair;"></canvas>
+        <fieldset>
+            <legend>Settings</legend>
+            <div style="padding-bottom: 1rem;">
+                <input type="checkbox" name="grids" id="grids">
+                <label for="grids">Show grids</label>
+            </div>
+            <div style="padding-bottom: 1rem;">
+                <label for="size">Size:</label>
+                <input type="number" name="size" id="size" min="5" max="1000">
+            </div>
+        </fieldset>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

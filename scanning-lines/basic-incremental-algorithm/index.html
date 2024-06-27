@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRGP - Basic Incremental Algorithm</title>
+</head>
+
+<body>
+    <h1>Basic Incremental Algorithm</h1>
+    <p>This sample code implements the basic line drawing algorithm, explained in the book <i>Computer Graphics:
+            Principles and Practice</i> under <i>Section 3.2.1</i>.</p>
+    <h2>Pros</h2>
+    <ul>
+        <li>Basic and straightforward implemention of line drawing</li>
+    </ul>
+    <h2>Cons</h2>
+    <ul>
+        <li>Lots of floating-point arithmetic including rounding and, since the slope is a fraction it is inevitible.
+        </li>
+        <li>Limited to cases where the slope is between -1 and 1, and the starting point should be the leftmost point.
+            (Some modification required to support such cases)</li>
+        <li>Not possible implement a direction. Same set of points will be generated when the endpoints are reversed.</li>
+    </ul>
+    <h2>Usage</h2>
+    <ul>
+        <li>Move your mouse to change end point, left click to set start point of the line.</li>
+        <li>Select different algorithms and grid size to experiment.</li>
+    </ul>
+    <div style="display: flex;">
+        <canvas id="canvas" style="cursor: crosshair;"></canvas>
+        <fieldset>
+            <legend>Settings</legend>
+            <div style="padding-bottom: 1rem;">
+                <input type="checkbox" name="grids" id="grids">
+                <label for="grids">Show grids</label>
+            </div>
+            <div style="padding-bottom: 1rem;">
+                <label for="size">Size:</label>
+                <input type="number" name="size" id="size" min="5" max="1000">
+            </div>
+            <div style="padding-bottom: 1rem;">
+                <div>
+                    <input type="radio" name="algo" id="base-algo">
+                    <label for="base-algo">Base algorithm</label>
+                </div>
+                <div>
+                    <input type="radio" name="algo" id="improved-algo">
+                    <label for="improved-algo">Improved algorithm</label>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

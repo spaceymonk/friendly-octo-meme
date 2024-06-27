@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRGP - Midpoint Line Algorithm</title>
+</head>
+
+<body>
+    <h1>Circle Draw Algorithm</h1>
+    <h2>Pros</h2>
+    <ul>
+        <li>Highly straightforward implementation by expressing both in Carteesen and Polar coordinates.</li>
+    </ul>
+    <h2>Cons</h2>
+    <ul>
+        <li>There will be gaps. You can eliminate the gaps by changing the granularity. It can be calculated
+            automatically for angle implementation by the formula:
+            <code><pre>granularity = Math.atan(1 / R)</pre></code>
+        </li>
+        <li>High cost due to numerous floating point arithmetics.</li>
+        <li>But another problem arises from the angle step method. Some pixels may get painted twice.</li>
+    </ul>
+    <h2>Usage</h2>
+    <ul>
+        <li>Move your mouse to change end point, left click to set start point of the line.</li>
+        <li>Select different algorithms and grid size to experiment.</li>
+    </ul>
+    <div style="display: flex;">
+        <canvas id="canvas" style="cursor: crosshair;"></canvas>
+        <fieldset>
+            <legend>Settings</legend>
+            <div style="padding-bottom: 1rem;">
+                <input type="checkbox" name="grids" id="grids">
+                <label for="grids">Show grids</label>
+            </div>
+            <div style="padding-bottom: 1rem;">
+                <label for="size">Size:</label>
+                <input type="number" name="size" id="size" min="5" max="1000">
+            </div>
+            <div style="padding-bottom: 1rem;">
+                <div style="padding-bottom: 0.5rem;">
+                    <div>
+                        <input type="radio" name="algo" id="base-algo">
+                        <label for="base-algo">Unit Steps</label>
+                    </div>
+                    <div>
+                        <label for="granularity-base">Granularity:</label>
+                        <input type="number" name="granularity-base" id="granularity-base" min="0.10" max="2.00"
+                            step="0.10">
+                    </div>
+                </div>
+                <div style="padding-bottom: 0.5rem;">
+                    <div>
+                        <input type="radio" name="algo" id="improved-algo">
+                        <label for="improved-algo">Unit Angles</label>
+                        <div>Granularity: <span id="granularity-improved"></span> &deg;</div>
+                    </div>
+                </div>
+
+            </div>
+        </fieldset>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
